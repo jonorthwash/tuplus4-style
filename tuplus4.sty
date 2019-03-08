@@ -1,0 +1,49 @@
+\ProvidesPackage{tuplus4}[2019/03/07 v.01 a
+package for the tu+4 workshop]
+
+%\RequirePackage{graphicx}
+\RequirePackage[in]{fullpage}
+\RequirePackage[hang,flushmargin]{footmisc}
+
+%\newcommand*{\project}[1]{\gdef\@project{#1}%
+%}
+%\newcommand*{\@project}{Final Year Project}
+%\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}%
+%}
+%\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
+%not set. Please fix this.}
+
+\def\@maketitle{%
+  \newpage
+  \null
+  %\vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\bfseries\@title\unskip\strut\par}%
+    \vskip 6pt%
+    {
+      %\lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+  \end{center}%
+  \par
+  \vskip 12pt}
+
+%\renewcommand*{\maketitle}{%
+%{\centering%
+%	{\bfseries\@title\unskip\strut\par}
+%	\vspace{6pt}
+%	{\@author\unskip\strut\par}\footnote{\@affiliation}
+%}
+%}
+
+\renewenvironment{abstract}{%
+	{\bfseries \abstractname}\quotation
+}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+
+\endinput
