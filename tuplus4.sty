@@ -13,22 +13,31 @@ package for the tu+4 workshop]
 %\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
 %not set. Please fix this.}
 
+\newenvironment{nscenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
 \def\@maketitle{%
   \newpage
   \null
   %\vskip 2em%
-  \begin{center}%
+  \begin{nscenter}%
   \let \footnote \thanks
     {\bfseries\@title\unskip\strut\par}%
-    \vskip 6pt%
+    \medbreak % \medskip is ~6pt, \bigskip is ~12pt
     {
       %\lineskip .5em%
       \begin{tabular}[t]{c}%
         \@author
-      \end{tabular}\par}%
-  \end{center}%
-  \par
-  \vskip 12pt}
+      \end{tabular}}%\par}%
+  \end{nscenter}%
+%Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut
+  %\par
+  %\vskip 12pt%
+  %\bigbreak%}
+  \bigbreak%
+%Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut}
+}
 
 %\renewcommand*{\maketitle}{%
 %{\centering%
@@ -38,9 +47,39 @@ package for the tu+4 workshop]
 %}
 %}
 
-\renewenvironment{abstract}{%
-	{\bfseries \abstractname}\quotation
-}
+
+\renewenvironment{abstract}
+  {\list{}{%
+    \setlength{\leftmargin}{0.4in}
+    \setlength{\rightmargin}{\leftmargin}% 
+  }%
+  \item\relax {\bfseries \abstractname.}}
+ {\endlist}
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\normalsize\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\sc}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {3.25ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                       {3.25ex \@plus1ex \@minus .2ex}%
+                                       {-1em}%
+                                      {\normalfont\normalsize\bfseries}}
+
+
+\newcommand\keywords[1]{\par {\bfseries Keywords.} #1}
 
 \setlength{\parskip}{6pt}
 \setlength{\parindent}{0pt}
