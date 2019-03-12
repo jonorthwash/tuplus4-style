@@ -114,17 +114,21 @@ package for the tu+4 workshop]
 
 \RequirePackage{expex}
 \lingset{
-	aboveexskip=0pt,  % will get \parskip already
-	belowexskip=-\parskip, % will get \parksip already, but seems to be too much
+	aboveexskip=\parskip,  % 6pt
+	belowexskip=0pt,
 	aboveglbskip=0pt,
 	aboveglcskip=0pt,
-	aboveglftskip=-\parskip,       % 0pt seems to be too much
-	belowglpreambleskip=-\parskip, % 0pt seems to be too much
+	aboveglftskip=0pt,
+	belowglpreambleskip=0pt,
 	belowpreambleskip=0pt,
-	interpartskip=-\parskip,       % 0pt still leaves about one \parskip of length
-	% See issue here: https://github.com/frampton/ExPex/issues/8
+	interpartskip=0pt,
 	glnabovelineskip=0pt,
    extraglskip=0pt,
+	%
+	% without the following line, many of the values above
+	% get an extra \parskip
+	% See issue here: https://github.com/frampton/ExPex/issues/8
+	Everyex={\parskip=0pt},
 }
 
 \endinput
