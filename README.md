@@ -1,5 +1,7 @@
 This is an unofficial LaTeX style file for the [Tu+4](https://wp.nyu.edu/tuworkshop4/) proceedings.
 
+WARNING: this is a WORK IN PROGRESS.  See the [issues](https://github.com/jonorthwash/tuplus4-style/issues).
+
 The style file is `tuplus4.sty`.  You can see how to use it in `example.tex`.
 
 A few notes:
