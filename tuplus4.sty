@@ -1,37 +1,33 @@
 \ProvidesPackage{tuplus4}[2019/03/07 v.01 a
 package for the tu+4 workshop]
 
-%\RequirePackage{graphicx}
 \RequirePackage[in]{fullpage}
 \RequirePackage[hang,flushmargin]{footmisc}
 
 \RequirePackage[colorlinks=true,citecolor=black,linkcolor=black,urlcolor=blue,breaklinks=true]{hyperref}
 \urlstyle{rm}   % to get non-monospace urls; "same" also should work
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}  % format email addresses
 
+% results mostly LSA-style citation style
 \RequirePackage[backend=biber,citestyle=lsalike,bibstyle=lsalike,style=authoryear-icomp,maxbibnames=99,maxcitenames=2,uniquelist=false,uniquename=false,hyperref=true,bibencoding=utf8,autolang=other]{biblatex}
 
 \RequirePackage{fontspec}
 
 \setmainfont[Scale=MatchLowercase]{FreeSerif}
-% liberation serif is metrically compatible with Times New Roman
-% FreeSerif seems to look most similar though
+% FreeSerif seems to be designed to look similar to Times New Roman
+% Liberation Serif is metrically compatible with Times New Roman,
+%   but looks different
 
-%\newcommand*{\project}[1]{\gdef\@project{#1}%
-%}
-%\newcommand*{\@project}{Final Year Project}
-%\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}%
-%}
-%\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
-%not set. Please fix this.}
 
+% Used for title centering
 \newenvironment{nscenter}
  {\parskip=0pt\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
 
+% Formatting of the title and authors
 \def\@maketitle{%
   \newpage
   \null
-  %\vskip 2em%
   \begin{nscenter}%
   \let \footnote \thanks
     {\bfseries\@title\unskip\strut\par}%
@@ -42,23 +38,12 @@ package for the tu+4 workshop]
         \@author
       \end{tabular}}%\par}%
   \end{nscenter}%
-%Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut
-  %\par
-  %\vskip 12pt%
-  %\bigbreak%}
-  \bigbreak%
-%Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut}
+  \medbreak%  % \medbreak is 6pt, \bigbreak is 12pt
+              % there seems to be about 6pt before the abstract already
+              % so we only need to add about 6pt more
 }
 
-%\renewcommand*{\maketitle}{%
-%{\centering%
-%	{\bfseries\@title\unskip\strut\par}
-%	\vspace{6pt}
-%	{\@author\unskip\strut\par}\footnote{\@affiliation}
-%}
-%}
-
-
+% Formatting of the abstract
 \renewenvironment{abstract}
   {\list{}{%
     \setlength{\leftmargin}{0.4in}
@@ -68,29 +53,35 @@ package for the tu+4 workshop]
  {\endlist}
 
 
-\renewcommand\section{\@startsection {section}{1}{\z@}%
-                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
-                                   {\z@}%2.3ex \@plus.2ex}%
-                                   {\normalfont\normalsize\bfseries\maybe@addperiod}}
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+      {6pt}%-3.5ex \@plus -1ex \@minus -.2ex}%
+      {\z@}%2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries\maybe@addperiod}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     %{1.5ex \@plus .2ex}%
-                                     {\z@}%
-                                     {\normalfont\normalsize\sc\maybe@addperiod}}
+      %{-3.25ex\@plus -1ex \@minus -.2ex}%
+      {6pt}%
+      %{1.5ex \@plus .2ex}%
+      {\z@}%
+      {\normalfont\normalsize\sc\maybe@addperiod}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     %{1.5ex \@plus .2ex}%
-                                     {\z@}%
-                                     {\normalfont\normalsize\bfseries\maybe@addperiod}}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-                                    {3.25ex \@plus1ex \@minus.2ex}%
-                                    {-1em}%
-                                    {\normalfont\normalsize\bfseries\maybe@addperiod}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
-                                       {3.25ex \@plus1ex \@minus .2ex}%
-                                       {-1em}%
-                                      {\normalfont\normalsize\bfseries\maybe@addperiod}}
+      %{-3.25ex\@plus -1ex \@minus -.2ex}%
+      {6pt}%
+      %{1.5ex \@plus .2ex}%
+      {\z@}%
+      {\normalfont\normalsize\it\maybe@addperiod}}
 
+% The following aren't defined.  Maybe they should be?
+%\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+%      {3.25ex \@plus1ex \@minus.2ex}%
+%      {-1em}%
+%      {\normalfont\normalsize\bfseries\maybe@addperiod}}
+%\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%      {3.25ex \@plus1ex \@minus .2ex}%
+%      {-1em}%
+%      {\normalfont\normalsize\bfseries\maybe@addperiod}}
+
+
+% Used to put a period at the end of each section name
 \newcommand{\maybe@addperiod}[1]{%
   #1.~~%
 }
@@ -99,23 +90,37 @@ package for the tu+4 workshop]
    {\csname the#1\endcsname\space}%    default
    {\csname #1@cntformat\endcsname}}%  enable individual control
 
+% Formatting of heading numbers
 \newcommand\section@cntformat{\thesection.\space}       % section-level
 \newcommand\subsection@cntformat{\thesubsection.\space} % subsection-level
+\newcommand\subsubsection@cntformat{}                   % subsubsection-level
 
+% Another way to ensure that subsubsections aren't numbered:
+%\setcounter{secnumdepth}{2}
+
+% For defining keywords
 \newcommand\keywords[1]{\par {\bfseries Keywords.} #1}
 
-\setlength{\parskip}{6pt}
-\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt}
+\setlength{\parskip}{0pt}   % No space between paragraphs
+\setlength{\parindent}{0pt} % No indentation of paragraphs
 \setlength{\bibhang}{0.3in}
-\linespread{0.93}    % To get Word-style single-spacing
-% MS Word with TNR puts about 7 lines in 1 3/16 inches, or about 12.2pt high per line
-% XeLaTeX with FreeSerif puts about 11 lines in 2in, or 13.1pt high per line
-% So making the line spacing 93% of its previous height gets it much closer to Word line spacing
 
+\linespread{0.93}           % To get Word-style single-spacing
+% MS Word with TNR puts about 7 lines in 1 3/16 inches,
+%    or about 12.2pt high per line
+% XeLaTeX with FreeSerif puts about 11 lines in 2in,
+%    or 13.1pt high per line
+% So making the line spacing 93% of its previous height
+%    gets it much closer to MS Word line spacing
+
+% ExPex for examples
 \RequirePackage{expex}
-\lingset{
-	aboveexskip=\parskip,  % 6pt
-	belowexskip=0pt,
+
+% Define the relevant aspects of the example style
+\definelingstyle{tuplus4}{
+	aboveexskip=6pt,
+	belowexskip=6pt,
 	aboveglbskip=0pt,
 	aboveglcskip=0pt,
 	aboveglftskip=0pt,
@@ -124,11 +129,15 @@ package for the tu+4 workshop]
 	interpartskip=0pt,
 	glnabovelineskip=0pt,
    extraglskip=0pt,
+	everygla=\mdseries,      % makes first line after preamble non-italics
 	%
 	% without the following line, many of the values above
 	% get an extra \parskip
+	% (though for now we have \parskip set to 0pt anyway)
 	% See issue here: https://github.com/frampton/ExPex/issues/8
 	Everyex={\parskip=0pt},
 }
+
+\lingset{lingstyle=tuplus4}
 
 \endinput
