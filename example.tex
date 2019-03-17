@@ -1,0 +1,82 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{tuplus4}
+
+\addbibresource{example.bib}
+
+\title{Example of \LaTeX{} style sheet for TU+4 proceedings}
+\author{Jonathan North Washington \& the conference organisers\thanks{
+	Thanks to Paloma Jeretič (NYU) and Yağmur Sağ (Rutgers).
+	Author: Jonathan Washington, Swarthmore College (\email{jonathan.washington@swarthmore.edu}).
+}}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ex pharetra, consectetur quam luctus, mattis massa. Integer nulla mauris, ornare eget massa ut, tempus feugiat felis. Suspendisse volutpat est ipsum, a mollis lacus laoreet sit amet. Proin at hendrerit massa. Etiam eros eros, varius in risus in, fringilla vulputate libero. Ut neque libero, feugiat sit amet sem vel, consequat mollis turpis. Sed a faucibus massa. Integer placerat ac quam et elementum. Nam in risus sit amet sem faucibus consectetur. Nam vulputate imperdiet purus. Aenean tincidunt neque ut ex consequat sagittis. Nulla sit amet pulvinar augue, rutrum mollis massa. Donec vel sodales mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+\keywords{proceedings; style sheets; \LaTeX{}}
+\end{abstract}
+
+
+\section{Introduction}
+
+Pellentesque sed convallis erat. Nullam justo elit, efficitur in mauris laoreet, tempus posuere risus. Praesent consectetur, est vel porttitor dignissim, neque nisi porttitor lacus, non rhoncus odio risus et purus. In rhoncus, augue in semper dignissim, mauris metus faucibus dui, tincidunt rutrum nisl dolor et nulla. In eget fringilla sem, non eleifend elit. Integer mi lacus, semper non nunc sed, tempus luctus arcu. Maecenas malesuada vestibulum dolor in bibendum. Morbi sit amet arcu eu dolor mattis pharetra.
+
+Cras suscipit, sem et fermentum dictum, orci dolor accumsan nibh, eu porttitor eros nibh sit amet elit. Etiam eu rhoncus est. Nulla ac sodales erat, sit amet ornare mi. Integer vel faucibus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla eget tellus tincidunt, tempor tellus nec, dignissim lectus. Proin consectetur, dui eu posuere commodo, eros ligula porttitor ante, sed malesuada dui orci eu odio. Ut ac erat nunc. Sed et aliquam nulla, malesuada blandit risus. Nunc id porttitor odio.
+
+\section{Background}
+
+Phasellus volutpat ac dolor vel aliquam. Sed leo libero, accumsan eu vulputate sed, semper ac sem. Proin dictum justo ut risus gravida, nec luctus ex tempus. Pellentesque tempus pellentesque iaculis. Nunc laoreet dolor in nibh auctor, vitae tempus quam pretium. Donec et vulputate elit. Nunc quis mi quis nunc finibus accumsan sed sed libero. Vivamus mollis risus suscipit tempus dictum.
+
+\subsection{First subsection}
+
+Nullam aliquet nisl sit amet tortor sagittis mollis quis non ex. Morbi sem enim, scelerisque in iaculis non, tempor ac nulla. Nullam ornare tincidunt erat, a fringilla velit consectetur in. Nullam convallis auctor dolor at auctor. Nam sed dui erat. Morbi eu massa a nisi bibendum luctus nec a ante. Nunc vitae semper dolor, eu volutpat urna. Proin aliquam maximus lacus at volutpat.
+
+\subsubsection{Sub-sub sections like this}
+
+Etiam volutpat metus ex, vitae varius ante eleifend vel. Donec purus erat, fermentum commodo eros sit amet, varius blandit turpis. Pellentesque tempus tellus at ante laoreet congue. Phasellus pretium turpis eu lectus rhoncus, eu consectetur ipsum egestas. Fusce sed dictum ligula, sed cursus augue. Donec nec semper nibh, vel consectetur lacus. Maecenas ornare nulla sed tortor consectetur, efficitur tempor sapien imperdiet. Cras sit amet mauris bibendum, facilisis augue non, rhoncus felis. Morbi hendrerit feugiat nunc non blandit. Pellentesque sollicitudin ipsum egestas nulla sollicitudin hendrerit. Nulla sit amet felis tincidunt, scelerisque metus id, bibendum magna. Sed gravida tempor sem, eget auctor enim ultrices consequat.
+
+\subsubsection{Another sub-sub section}
+
+Praesent iaculis tortor vitae velit hendrerit fringilla. Maecenas accumsan mollis pharetra. Nulla non lacus at nunc mollis iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed massa iaculis, accumsan mi quis, auctor mi. Etiam neque quam, tincidunt eget imperdiet ac, facilisis non urna. Cras a venenatis nibh. Nulla eget fringilla dolor, eget egestas mi. Sed lacus tellus, fringilla sed ornare eget, scelerisque quis lacus. Nulla nec metus sodales, ullamcorper erat in, fringilla orci. Aenean dictum ipsum et magna laoreet vehicula. Vivamus rutrum condimentum neque, ut posuere nisl malesuada ac.
+
+\subsection{Second subsection}
+
+Aliquam ultrices ante lacus. Duis sed rhoncus enim, id aliquet erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec volutpat diam. Mauris interdum arcu nec venenatis viverra. Aliquam tempor ipsum vel quam pretium cursus. Sed euismod ligula at odio facilisis pellentesque. Curabitur ultricies, elit eget consectetur aliquet, ante mi fringilla lorem, eu rhoncus turpis purus et velit.
+
+Example (\ref{ex:lezgian1}) below shows how to include a single numbered language example with interlinear glossing together with a line identifying the language and its source.
+
+\ex\label{ex:lezgian1}
+	\begingl
+		\glpreamble Lezgian \parencite[207]{haspelmath1993} //
+		\gla Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č. //
+		\glb Gila they-\textsc{obl}-\textsc{gen} farm forever behind stay-\textsc{fut}-\textsc{neg} //
+		\glft ‘Now their farm will not stay behind forever.’ //
+	\endgl
+\xe
+
+\textcite{silk2012} also said some interesting stuff.
+
+\pex\label{ex:passives}
+	\glpreamble Not sure what language this is. //
+	\a\begingl
+		\gla ñuka-ka Maria papa-ta yanu-chi-shka ka-rka-ni. //
+		\glb \textsc{1sg}-\textsc{top} Maria potato-\textsc{acc} cook-\textsc{caus}-\textsc{pass} be-\textsc{pst}-\textsc{1sg.sbj} //
+		\glft ‘I was made to cook potatoes by Maria.’ //
+	\endgl
+	\a\begingl
+		\gla ñuka-ka mishqui-ka miku-naya-shka ka-rka-nil. //
+		\glb \textsc{1sg}-\textsc{top} candy-\textsc{top} eat-\textsc{desid}-\textsc{pass} be-\textsc{pst}-\textsc{1sg.sbj} //
+		\glft ‘I wanted to eat candy.’ //
+	\endgl
+\xe
+
+Fusce volutpat elit eget mauris ullamcorper vehicula. Praesent fringilla dictum ligula, in tempus enim ultricies a. Praesent ut nisl porta, malesuada est scelerisque, aliquet mauris. Praesent eu dolor in elit tempor congue in quis massa. Curabitur ultrices, lacus sed convallis suscipit, sapien purus molestie leo, at consectetur magna ex a turpis. Quisque congue nulla id felis rhoncus, at tempor erat lacinia. Duis accumsan tristique turpis ac ultrices. Quisque sodales ut dui ac faucibus. Proin faucibus sem ac quam ornare, eu lobortis ligula convallis. Praesent augue mauris, ultrices sed sem sit amet, semper sollicitudin nisl. Aenean ex turpis, sodales ut justo vitae, semper dictum neque.
+
+%Integer faucibus faucibus molestie. Morbi quis congue mi. Donec accumsan purus in laoreet lobortis. Nam gravida aliquam arcu quis euismod. In hac habitasse platea dictumst. Praesent hendrerit interdum ipsum, ac varius eros imperdiet sed. Fusce aliquet nulla eget neque commodo, at dictum turpis blandit. Vivamus pharetra tellus et tempor imperdiet. Aliquam ullamcorper et sem posuere consequat. Duis maximus neque sit amet justo condimentum tempor.
+
+\printbibliography
+
+\end{document}
