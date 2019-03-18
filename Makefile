@@ -5,3 +5,4 @@ example.pdf: example.tex
 
 clean:
 	latexmk -CA
+	rm *.xml
