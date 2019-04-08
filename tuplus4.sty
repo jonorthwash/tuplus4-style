@@ -8,10 +8,15 @@ package for the tu+4 workshop]
 \urlstyle{rm}   % to get non-monospace urls; "same" also should work
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}  % format email addresses
 
-% results mostly LSA-style citation style
-\RequirePackage[backend=biber,citestyle=lsalike,bibstyle=lsalike,style=authoryear-icomp,maxbibnames=99,maxcitenames=2,uniquelist=false,uniquename=false,hyperref=true,bibencoding=utf8,autolang=other]{biblatex}
+% Use S&P unified stylesheet
+% You can get this from here:
+%   https://github.com/semprag/biblatex-sp-unified
+\RequirePackage[backend=biber,
+	bibstyle=biblatex-sp-unified,
+	citestyle=sp-authoryear-comp,
+	maxcitenames=3,maxbibnames=99]{biblatex}
 
-% use xelatex to compile
+% make sure to use xelatex to compile, not pdflatex!
 \RequirePackage{fontspec}
 
 \setmainfont[Scale=MatchLowercase]{FreeSerif}
