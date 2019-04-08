@@ -4,7 +4,9 @@ WARNING: this is a WORK IN PROGRESS.  See the [issues](https://github.com/jonort
 
 The style file is `tuplus4.sty`.  You can see how to use it in `example.tex`.
 
-A few notes:
+You'll need the [bibliography stylesheet from S&P](https://github.com/semprag/biblatex-sp-unified) ([further documentation](https://info.semprag.org/install) available).
+
+A few notes about dependencies:
 * It's set up to use `expex` for examples.
 * It's set up to use `biblatex` (with `biber`) for the bibliography.
 * It's set up to be compiled with `xelatex` for ease of use with arbitrary fonts and unicode.
