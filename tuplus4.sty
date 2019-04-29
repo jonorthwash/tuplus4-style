@@ -58,6 +58,9 @@ package for the tu+4 workshop]
   \item\relax {\bfseries \abstractname.}}
  {\endlist}
 
+%When making a bibliography, use \printbibliography[heading=tuplusbib]
+\defbibheading{tuplusbib}{%
+	\bibsection*{References}}
 
 \renewcommand\section{\@startsection{section}{1}{\z@}%
       {6pt}%-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -75,6 +78,11 @@ package for the tu+4 workshop]
       %{1.5ex \@plus .2ex}%
       {\z@}%
       {\normalfont\normalsize\it\maybe@addperiod}}
+
+\newcommand\bibsection{\@startsection{section}{1}{\z@}%
+      {18pt}%-3.5ex \@plus -1ex \@minus -.2ex}%
+      {\z@}%2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
 
 % The following aren't defined.  Maybe they should be?
 %\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
