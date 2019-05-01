@@ -25,6 +25,10 @@ package for the tu+4 workshop]
 %   but looks different
 
 
+% Footnote indentation
+\renewcommand\@makefntext[1]{%
+  \noindent\@makefnmark\makebox[3pt][r]{}#1}
+
 % Used for title centering
 \newenvironment{nscenter}
  {\parskip=0pt\par\nopagebreak\centering}
@@ -127,6 +131,18 @@ package for the tu+4 workshop]
 %    or 13.1pt high per line
 % So making the line spacing 93% of its previous height
 %    gets it much closer to MS Word line spacing
+
+% Lists
+\RequirePackage{enumitem}
+\setlist{
+	topsep=6pt,
+	itemsep=0pt,
+	partopsep=0pt,
+	parsep=0pt
+}
+
+% Paragraph beginnings
+\setlength\parindent{0.3in}
 
 % ExPex for examples
 \RequirePackage{expex}
