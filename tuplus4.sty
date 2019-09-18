@@ -14,7 +14,45 @@ package for the tu+4 workshop]
 \RequirePackage[backend=biber,
 	bibstyle=biblatex-sp-unified,
 	citestyle=sp-authoryear-comp,
+	ibidtracker=constrict,
 	maxcitenames=3,maxbibnames=99]{biblatex}
+
+
+% The following bib stuff is all to get "ibid.":
+\providecommand*{\mkibid}[1]{#1}
+
+\newbibmacro*{cite:ibid}{%
+  \printtext[bibhyperref]{\bibstring[\mkibid]{ibidem}}%
+  \ifloccit
+    {\global\booltrue{cbx:loccit}}
+    {}}
+
+\renewbibmacro*{cite}{%
+  \iffieldundef{shorthand}
+    {\ifthenelse{\ifciteibid\AND\NOT\iffirstonpage}
+       {\usebibmacro{cite:ibid}}
+       {\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}}
+          {\usebibmacro{cite:label}%
+           \setunit{\printdelim{nonameyeardelim}}%
+           \usebibmacro{cite:labelyear+extradate}%
+           \usebibmacro{cite:reinit}}
+          {\iffieldequals{namehash}{\cbx@lasthash}
+             {\ifthenelse{\iffieldequals{labelyear}{\cbx@lastyear}\AND
+                          \(\value{multicitecount}=0\OR\iffieldundef{postnote}\)}
+                {\setunit{\addcomma}%
+                 \usebibmacro{cite:extradate}}
+                {\setunit{\compcitedelim}%
+                 \usebibmacro{cite:labelyear+extradate}%
+                 \savefield{labelyear}{\cbx@lastyear}}}
+             {\printnames{labelname}%
+              \setunit{\printdelim{nameyeardelim}}%
+              \usebibmacro{cite:labelyear+extradate}%
+              \savefield{namehash}{\cbx@lasthash}%
+              \savefield{labelyear}{\cbx@lastyear}}}}}
+    {\usebibmacro{cite:shorthand}%
+     \usebibmacro{cite:reinit}}%
+  \setunit{\multicitedelim}}
+
 
 % make sure to use xelatex to compile, not pdflatex!
 \RequirePackage{fontspec}
@@ -172,7 +210,7 @@ package for the tu+4 workshop]
 	% (though for now we have \parskip set to 0pt anyway)
 	% See issue here: https://github.com/frampton/ExPex/issues/8
 	Everyex={\parskip=0pt},
-	labeloffset=0.3in,
+	labeloffset=0.4in,
 	labelanchor=margin,
 	% the following aligns the preamble with the label
 	preambleoffset=0pt,
